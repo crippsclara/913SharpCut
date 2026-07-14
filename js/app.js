@@ -121,22 +121,74 @@ function renderCheckout() {
   box.innerHTML=cart.map(i=>`<div class="summary-line"><span>${i.name}${i.options?.color?` (${i.options.color})`:''}</span><strong>${money(i.price)}</strong></div>`).join('');
   totalEl.textContent=money(cart.reduce((s,i)=>s+i.price*(i.qty||1),0));
 }
-function submitCheckout(e) {
-  e.preventDefault();
-  const cart=getCart();
-  if(!cart.length){ alert('Your cart is empty.'); return; }
-  const data=new FormData(e.target);
-  const orderNo='SC-'+Math.floor(100000+Math.random()*900000);
-  const order={
-    orderNo,date:new Date().toISOString(),name:data.get('name'),email:data.get('email'),
-    phone:data.get('phone'),fulfillment:data.get('fulfillment'),address:data.get('address'),
-    notes:data.get('notes'),items:cart,status:'Received'
+async function submitCheckout(event) {
+  event.preventDefault();
+
+  const cart = getCart();
+
+  if (!cart.length) {
+    alert("Your cart is empty.");
+    return;
+  }
+
+  const form = event.target;
+  const data = new FormData(form);
+
+  const orderNumber =
+    "SC-" + Math.floor(100000 + Math.random() * 900000);
+
+  const total = cart.reduce(
+    (sum, item) => sum + Number(item.price) * (item.qty || 1),
+    0
+  );
+
+  const order = {
+    order_number: orderNumber,
+    customer_name: data.get("name"),
+    customer_email: data.get("email"),
+    customer_phone: data.get("phone") || null,
+    fulfillment: data.get("fulfillment"),
+    address: data.get("address") || null,
+    notes: data.get("notes") || null,
+    items: cart,
+    total: total,
+    status: "Received"
   };
-  const orders=JSON.parse(localStorage.getItem('scOrders')||'[]');
-  orders.push(order); localStorage.setItem('scOrders',JSON.stringify(orders));
-  localStorage.removeItem('scCart');
-  location.href=`thank-you.html?order=${encodeURIComponent(orderNo)}`;
-}
+
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
+  }
+
+  try {
+    const { error } = await supabaseClient
+      .from("orders")
+      .insert(order);
+
+    if (error) {
+      throw error;
+    }
+
+    localStorage.removeItem("scCart");
+
+    window.location.href =
+      "thank-you.html?order=" +
+      encodeURIComponent(orderNumber);
+
+  } catch (error) {
+    console.error("Supabase order error:", error);
+
+    alert(
+      "Your order could not be submitted. Please try again."
+    );
+
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = "Place Order Request";
+    }
+  }
 function showOrderNumber() {
   const el=document.getElementById('orderNumber');
   if(el) el.textContent=new URLSearchParams(location.search).get('order')||'SC-PENDING';
