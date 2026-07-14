@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Paper Sticker Packs | 913 SharpCut</title>
+  <meta name="description" content="Custom decals and paper sticker packs from 913 SharpCut.">
+  <meta name="theme-color" content="#08090c">
+  <link rel="icon" href="images/brand/913-sharpcut-logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="wordmark" href="index.html"><span class="pink">913</span> <span class="blue">SharpCut</span></a>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="sticker-packs.html">Sticker Packs</a>
+      <a href="custom-order.html">Custom Order</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="faq.html">FAQ</a>
+      <a class="cart-link" href="cart.html">Cart (<span data-cart-count>0</span>)</a>
+    </nav>
+  </div>
+</header>
+
+
+<main class="section">
+  <div class="container">
+    <div class="section-heading"><h1>Build a Paper Sticker Pack</h1><p>Choose the number of assorted stickers and the main colour for the pack.</p></div>
+    <div class="pack-builder">
+      <section class="card form-card">
+        <div class="form-group">
+          <label for="packQty">Pack size</label>
+          <select id="packQty" onchange="buildStickerPack()">
+            <option value="10">10 stickers</option>
+            <option value="20">20 stickers</option>
+            <option value="30">30 stickers</option>
+            <option value="40">40 stickers</option>
+            <option value="50">50 stickers</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-top:22px">
+          <label>Main colour</label>
+          <div class="swatches">
+            <label class="swatch"><input type="radio" name="packColor" value="Pink" checked onchange="buildStickerPack()"><span class="swatch-pink">Pink</span></label>
+            <label class="swatch"><input type="radio" name="packColor" value="Blue" onchange="buildStickerPack()"><span class="swatch-blue">Blue</span></label>
+            <label class="swatch"><input type="radio" name="packColor" value="Black" onchange="buildStickerPack()"><span class="swatch-black">Black</span></label>
+          </div>
+        </div>
+        <div class="notice" style="margin-top:24px">Sticker packs are assorted. You choose the main colour, while secondary colours and exact designs may vary.</div>
+      </section>
+      <aside class="card pack-summary" id="packSummary"></aside>
+    </div>
+  </div>
+</main>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="images/brand/913-sharpcut-logo.png" alt="913 SharpCut">
+        <p style="color:var(--muted)">Custom vinyl decals and paper sticker packs made to stand out.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <div class="footer-links">
+          <a href="shop.html">All Products</a>
+          <a href="sticker-packs.html">Paper Sticker Packs</a>
+          <a href="custom-order.html">Custom Order</a>
+          <a href="cart.html">Cart</a>
+        </div>
+      </div>
+      <div>
+        <h3>Information</h3>
+        <div class="footer-links">
+          <a href="contact.html">Contact</a>
+          <a href="order-tracking.html">Track Order</a>
+          <a href="shipping-policy.html">Shipping</a>
+          <a href="refund-policy.html">Refunds</a>
+          <a href="privacy.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span data-year></span> 913 SharpCut. Built for loud decals and suspiciously quiet code.</div>
+  </div>
+</footer>
+<script src="js/app.js"></script>
+
+</body>
+</html>

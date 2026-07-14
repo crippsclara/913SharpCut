@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Shop | 913 SharpCut</title>
+  <meta name="description" content="Custom decals and paper sticker packs from 913 SharpCut.">
+  <meta name="theme-color" content="#08090c">
+  <link rel="icon" href="images/brand/913-sharpcut-logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="wordmark" href="index.html"><span class="pink">913</span> <span class="blue">SharpCut</span></a>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="sticker-packs.html">Sticker Packs</a>
+      <a href="custom-order.html">Custom Order</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="faq.html">FAQ</a>
+      <a class="cart-link" href="cart.html">Cart (<span data-cart-count>0</span>)</a>
+    </nav>
+  </div>
+</header>
+
+
+<main class="section">
+  <div class="container">
+    <div class="section-heading"><h1>Shop</h1><p>Browse decal designs and paper sticker packs. Sample pricing is included and can be edited in <code>js/app.js</code>.</p></div>
+    <div class="shop-toolbar">
+      <input class="search" id="shopSearch" oninput="searchProducts()" placeholder="Search products…">
+      <div class="filter-group">
+        <button class="filter-btn active" onclick="filterProducts('all',this)">All</button>
+        <button class="filter-btn" onclick="filterProducts('funny',this)">Funny</button>
+        <button class="filter-btn" onclick="filterProducts('quotes',this)">Quotes</button>
+        <button class="filter-btn" onclick="filterProducts('automotive',this)">Automotive</button>
+        <button class="filter-btn" onclick="filterProducts('packs',this)">Sticker Packs</button>
+      </div>
+    </div>
+    <div class="grid-4" id="productGrid"></div>
+  </div>
+</main>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="images/brand/913-sharpcut-logo.png" alt="913 SharpCut">
+        <p style="color:var(--muted)">Custom vinyl decals and paper sticker packs made to stand out.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <div class="footer-links">
+          <a href="shop.html">All Products</a>
+          <a href="sticker-packs.html">Paper Sticker Packs</a>
+          <a href="custom-order.html">Custom Order</a>
+          <a href="cart.html">Cart</a>
+        </div>
+      </div>
+      <div>
+        <h3>Information</h3>
+        <div class="footer-links">
+          <a href="contact.html">Contact</a>
+          <a href="order-tracking.html">Track Order</a>
+          <a href="shipping-policy.html">Shipping</a>
+          <a href="refund-policy.html">Refunds</a>
+          <a href="privacy.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span data-year></span> 913 SharpCut. Built for loud decals and suspiciously quiet code.</div>
+  </div>
+</footer>
+<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Home | 913 SharpCut</title>
+  <meta name="description" content="Custom decals and paper sticker packs from 913 SharpCut.">
+  <meta name="theme-color" content="#08090c">
+  <link rel="icon" href="images/brand/913-sharpcut-logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="wordmark" href="index.html"><span class="pink">913</span> <span class="blue">SharpCut</span></a>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="sticker-packs.html">Sticker Packs</a>
+      <a href="custom-order.html">Custom Order</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="faq.html">FAQ</a>
+      <a class="cart-link" href="cart.html">Cart (<span data-cart-count>0</span>)</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Custom decals • paper sticker packs • bold designs</div>
+        <h1>Make it <span class="gradient-text">sharp.</span><br>Make it yours.</h1>
+        <p>913 SharpCut creates loud, clean custom vinyl decals and assorted paper sticker packs in your choice of main colour.</p>
+        <div class="button-row">
+          <a class="btn btn-primary" href="shop.html">Shop Decals</a>
+          <a class="btn btn-secondary" href="sticker-packs.html">Build a Sticker Pack</a>
+          <a class="btn btn-secondary" href="custom-order.html">Request Custom Work</a>
+        </div>
+      </div>
+      <div class="hero-logo"><img src="images/brand/913-sharpcut-logo.png" alt="913 SharpCut logo"></div>
+    </div>
+  </section>
+  <section class="container">
+    <div class="trust-strip">
+      <div>✂ Precision cut</div><div>🎨 Pink, blue or black</div><div>📦 Packs of 10–50</div><div>🚗 Custom designs</div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-heading"><h2>What we make</h2><p>Vinyl for cars, windows and projects, plus paper sticker packs for laptops, notebooks, packaging and whatever else humans have decided needs decoration.</p></div>
+      <div class="grid-3">
+        <div class="card icon-card"><div class="icon-bubble">01</div><strong>Vinyl decals</strong><p>Funny, automotive and custom-cut designs.</p></div>
+        <div class="card icon-card"><div class="icon-bubble">02</div><strong>Paper sticker packs</strong><p>Choose 10, 20, 30, 40 or 50 stickers and a main colour.</p></div>
+        <div class="card icon-card"><div class="icon-bubble">03</div><strong>Custom orders</strong><p>Upload your idea and request size, colour and details.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-heading"><h2>Featured designs</h2><p>A few samples from the collection.</p></div>
+      <div class="grid-4">
+        <article class="card product-card"><img src="images/products/boobie-bouncer.jpg" alt="Boobie Bouncer decal"><div class="card-body"><span class="badge">Funny</span><h3>Boobie Bouncer</h3><div class="price">$8.00</div><button class="btn btn-primary" onclick="addToCart('boobie')">Add to Cart</button></div></article>
+        <article class="card product-card"><img src="images/products/desert-skull.jpg" alt="Desert Skull decal"><div class="card-body"><span class="badge">Automotive</span><h3>Desert Skull</h3><div class="price">$12.00</div><button class="btn btn-primary" onclick="addToCart('skull')">Add to Cart</button></div></article>
+        <article class="card product-card"><img src="images/products/good-head.jpg" alt="Good Head decal"><div class="card-body"><span class="badge">Quote</span><h3>Good Head</h3><div class="price">$8.00</div><button class="btn btn-primary" onclick="addToCart('head')">Add to Cart</button></div></article>
+        <article class="card product-card"><img src="images/products/wasted-paychecks.jpg" alt="Wasted Paychecks decal"><div class="card-body"><span class="badge">Quote</span><h3>Wasted Paychecks</h3><div class="price">$9.00</div><button class="btn btn-primary" onclick="addToCart('wasted')">Add to Cart</button></div></article>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="images/brand/913-sharpcut-logo.png" alt="913 SharpCut">
+        <p style="color:var(--muted)">Custom vinyl decals and paper sticker packs made to stand out.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <div class="footer-links">
+          <a href="shop.html">All Products</a>
+          <a href="sticker-packs.html">Paper Sticker Packs</a>
+          <a href="custom-order.html">Custom Order</a>
+          <a href="cart.html">Cart</a>
+        </div>
+      </div>
+      <div>
+        <h3>Information</h3>
+        <div class="footer-links">
+          <a href="contact.html">Contact</a>
+          <a href="order-tracking.html">Track Order</a>
+          <a href="shipping-policy.html">Shipping</a>
+          <a href="refund-policy.html">Refunds</a>
+          <a href="privacy.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span data-year></span> 913 SharpCut. Built for loud decals and suspiciously quiet code.</div>
+  </div>
+</footer>
+<script src="js/app.js"></script>
+
+</body>
+</html>
