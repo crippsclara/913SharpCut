@@ -82,11 +82,11 @@ function buildStickerPack() {
   const colour = selectedColour.value;
 
   const prices = {
-    10: 12,
-    20: 20,
-    30: 27,
-    40: 34,
-    50: 40
+    10: 15,
+    20: 25,
+    30: 30,
+    40: 40,
+    50: 45,
   };
 
   const price = prices[quantity];
