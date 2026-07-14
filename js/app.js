@@ -68,16 +68,60 @@ function searchProducts() {
   renderProducts(PRODUCTS.filter(p=>p.name.toLowerCase().includes(query)));
 }
 function buildStickerPack() {
-  const qty = Number(document.getElementById('packQty').value);
-  const color = document.querySelector('input[name="packColor"]:checked')?.value || 'Pink';
-  const prices = {10:12,20:20,30:27,40:34,50:40};
-  document.getElementById('packSummary').innerHTML = `
-    <h3>Your sticker pack</h3>
-    <div class="summary-line"><span>Quantity</span><strong>${qty} stickers</strong></div>
-    <div class="summary-line"><span>Main colour</span><strong>${color}</strong></div>
-    <div class="summary-line summary-total"><span>Total</span><strong>${money(prices[qty])}</strong></div>
-    <button class="btn btn-primary" style="width:100%" onclick="addStickerPack(${qty},'${color}',${prices[qty]})">Add Pack to Cart</button>
-    <p style="color:var(--muted);font-size:.88rem">Designs are assorted. The selected colour will be the main colour used throughout the pack.</p>`;
+  const quantitySelect = document.getElementById("packQty");
+  const summary = document.getElementById("packSummary");
+  const selectedColour = document.querySelector(
+    'input[name="packColor"]:checked'
+  );
+
+  if (!quantitySelect || !summary || !selectedColour) {
+    return;
+  }
+
+  const quantity = Number(quantitySelect.value);
+  const colour = selectedColour.value;
+
+  const prices = {
+    10: 12,
+    20: 20,
+    30: 27,
+    40: 34,
+    50: 40
+  };
+
+  const price = prices[quantity];
+
+  summary.innerHTML = `
+    <h3>Your Sticker Pack</h3>
+
+    <div class="summary-line">
+      <span>Pack size</span>
+      <strong>${quantity} stickers</strong>
+    </div>
+
+    <div class="summary-line">
+      <span>Main colour</span>
+      <strong>${colour}</strong>
+    </div>
+
+    <div class="summary-line summary-total">
+      <span>Total</span>
+      <strong>${money(price)}</strong>
+    </div>
+
+    <button
+      class="btn btn-primary"
+      style="width: 100%;"
+      onclick="addStickerPack(${quantity}, '${colour}', ${price})"
+    >
+      Add Pack to Cart
+    </button>
+
+    <p style="color: var(--muted); font-size: .88rem;">
+      Designs are assorted. Your selected colour will be the main colour used throughout the pack.
+    </p>
+  `;
+}
 }
 function addStickerPack(qty,color,price) {
   const cart=getCart();
